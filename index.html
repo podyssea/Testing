@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WLgr</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<h1>Workout Routines</h1>
+
+<div class="tab">
+  <button class="tablinks" onclick="openDay(event, 'Monday')">Monday</button>
+  <button class="tablinks" onclick="openDay(event, 'Tuesday')">Tuesday</button>
+  <button class="tablinks" onclick="openDay(event, 'Wednesday')">Wednesday</button>
+  <button class="tablinks" onclick="openDay(event, 'Thursday')">Thursday</button>
+  <button class="tablinks" onclick="openDay(event, 'Friday')">Friday</button>
+  <button class="tablinks" onclick="openDay(event, 'Saturday')">Saturday</button>
+  <button class="tablinks" onclick="openDay(event, 'Sunday')">Sunday</button>
+  <button onclick="saveData()">Save</button> <!-- Save button -->
+  <button onclick="clearData()">Clear Data</button> <!-- Clear data button -->
+</div>
+
+<div id="Monday" class="tabcontent">
+  <h2>Monday</h2>
+  <table id="tableMonday" class="dayTable">
+    <tr>
+      <th>Exercise</th>
+      <th>Reps</th>
+      <th>Weight</th>
+    </tr>
+    <tr>
+    </tr>
+    <tr>
+    </tr>
+    <!-- Add more rows as needed -->
+  </table>
+
+  <button onclick="addRow()">Add Row</button>
+  <button onclick="removeRow()">Remove Row</button>
+</div>
+
+<div id="Tuesday" class="tabcontent">
+  <h2>Tuesday</h2>
+  <table id="tableTuesday" class="dayTable">
+    <tr>
+      <th>Exercise</th>
+      <th>Reps</th>
+      <th>Weight</th>
+    </tr>
+    <tr>
+    </tr>
+    <tr>
+    </tr>
+    <!-- Add more rows as needed -->
+  </table>
+
+  <button onclick="addRow()">Add Row</button>
+  <button onclick="removeRow()">Remove Row</button>
+</div>
+
+<div id="Wednesday" class="tabcontent">
+  <h2>Wednesday</h2>
+  <table id="tableWednesday" class="dayTable">
+    <tr>
+      <th>Exercise</th>
+      <th>Reps</th>
+      <th>Weight</th>
+    </tr>
+    <tr>
+    </tr>
+    <tr>
+    </tr>
+    <!-- Add more rows as needed -->
+  </table>
+
+  <button onclick="addRow()">Add Row</button>
+  <button onclick="removeRow()">Remove Row</button>
+</div>
+
+<div id="Thursday" class="tabcontent">
+  <h2>Thursday</h2>
+  <table id="tableThursday" class="dayTable">
+    <tr>
+      <th>Exercise</th>
+      <th>Reps</th>
+      <th>Weight</th>
+    </tr>
+    <tr>
+    </tr>
+    <tr>
+    </tr>
+    <!-- Add more rows as needed -->
+  </table>
+
+  <button onclick="addRow()">Add Row</button>
+  <button onclick="removeRow()">Remove Row</button>
+</div>
+
+<div id="Friday" class="tabcontent">
+  <h2>Friday</h2>
+  <table id="tableFriday" class="dayTable">
+    <tr>
+      <th>Exercise</th>
+      <th>Reps</th>
+      <th>Weight</th>
+    </tr>
+    <tr>
+    </tr>
+    <tr>
+    </tr>
+    <!-- Add more rows as needed -->
+  </table>
+
+  <button onclick="addRow()">Add Row</button>
+  <button onclick="removeRow()">Remove Row</button>
+</div>
+
+<div id="Saturday" class="tabcontent">
+  <h2>Saturday</h2>
+  <table id="tableSaturday" class="dayTable">
+    <tr>
+      <th>Exercise</th>
+      <th>Reps</th>
+      <th>Weight</th>
+    </tr>
+    <tr>
+    </tr>
+    <tr>
+    </tr>
+    <!-- Add more rows as needed -->
+  </table>
+
+  <button onclick="addRow()">Add Row</button>
+  <button onclick="removeRow()">Remove Row</button>
+</div>
+
+<div id="Sunday" class="tabcontent">
+  <h2>Sunday</h2>
+  <table id="tableSunday" class="dayTable">
+    <tr>
+      <th>Exercise</th>
+      <th>Reps</th>
+      <th>Weight</th>
+    </tr>
+    <tr>
+    </tr>
+    <tr>
+    </tr>
+    <!-- Add more rows as needed -->
+  </table>
+
+  <button onclick="addRow()">Add Row</button>
+  <button onclick="removeRow()">Remove Row</button>
+</div>
+
+<div>
+  <button onclick="saveData()">Save</button> <!-- Save button -->
+  <button onclick="clearData()">Clear Data</button> <!-- Clear data button -->
+</div>
+
+<!-- Repeat similar structure for other days -->
+
+<script src="main.js"></script>
+<script>
+  // Call the loadData function when the page is loaded
+  window.onload = function() {
+    loadData();
+  };
+</script>
+</body>
+</html>
