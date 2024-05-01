@@ -31,7 +31,6 @@ function removeRow() {
   removeRowFromTable("table" + activeTabId);
 }
 
-
 function openDay(evt, dayName) {
   var i, tabcontent, tablinks;
   tabcontent = document.getElementsByClassName("tabcontent");
@@ -120,9 +119,6 @@ function loadData() {
         }
       });
     });
-  } else {
-    // Inform the user that there is no saved data
-    alert('No saved data found!');
   }
 }
 
