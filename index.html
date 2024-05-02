@@ -18,8 +18,6 @@
   <button class="tablinks" onclick="openDay(event, 'Friday')">Friday</button>
   <button class="tablinks" onclick="openDay(event, 'Saturday')">Saturday</button>
   <button class="tablinks" onclick="openDay(event, 'Sunday')">Sunday</button>
-  <button onclick="saveData()">Save</button> <!-- Save button -->
-  <button onclick="clearData()">Clear Data</button> <!-- Clear data button -->
 </div>
 
 <div id="Monday" class="tabcontent">
@@ -175,6 +173,11 @@
     </tr>
     <!-- Add more rows as needed -->
   </table>
+</div>
+
+<div class="footer">
+  <button onclick="saveData()">Save</button> <!-- Save button -->
+  <button onclick="clearData()">Clear Data</button> <!-- Clear data button -->
 </div>
 
 <script src="main.js"></script>

@@ -6,9 +6,13 @@ function addRowToTable(tableId) {
   // Add cells to the new row
   for (var i = 0; i < table.rows[0].cells.length; i++) {
     var cell = newRow.insertCell(i);
-    cell.innerHTML = "<input type='text'>";
+    var input = document.createElement("input");
+    input.type = "text";
+    input.style.width = "150px"; // Set width of input box
+    cell.appendChild(input);
   }
 }
+
 
 // Function to remove the last row from a specific table
 function removeRowFromTable(tableId) {

@@ -66,7 +66,7 @@ button:hover {
 
 /* Table styles */
 .dayTable {
-  width: 100%;
+  width: 50%;
   border-collapse: collapse;
 }
 
@@ -95,30 +95,54 @@ button:hover {
   background-color: #005f6b;
 }
 
-/* Save and Clear Data button styles */
-.tab button:nth-last-child(2),
-.tab button:last-child {
+/* Save and Clear Data button styles and footer styles*/
+.footer button:nth-last-child(2),
+.footer button:last-child {
   background-color: #009688; /* Teal color for Clear Data button */
 }
 
-.tab button:nth-last-child(2):hover,
-.tab button:last-child:hover {
+.footer button:nth-last-child(2):hover,
+.footer button:last-child:hover {
   background-color: #00796b; /* Darker teal color on hover */
 }
 
-.tab button:last-child {
+.footer button:last-child {
   background-color: #f44336; /* Red color for Save button */
 }
 
-.tab button:last-child:hover {
+.footer button:last-child:hover {
   background-color: #d32f2f; /* Darker red color on hover */
 
+}
+
+.footer {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+}
+
+.footer button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  color: #333; /* Change text color to dark gray */
+}
+
+.footer button:hover {
+  background-color: #ddd;
+}
+
+.footer button.active {
+  background-color: #ccc;
 }
 
 /* Day header styles */
 .dayHeader {
   display: flex;
-  justify-content: space-between;
   align-items: center;
   margin-bottom: 10px;
 }
@@ -133,6 +157,7 @@ button:hover {
   color: white;
   padding: 8px 16px;
   border: none;
+  float: left;
   border-radius: 4px;
   cursor: pointer;
 }
@@ -140,4 +165,24 @@ button:hover {
 .dayButtons button:hover {
   background-color: #45a049;
 }
+
+/* Media query for smaller screens */
+@media only screen and (max-width: 600px) {
+  .dayTable {
+    width: 100%; /* Set table width to 100% of the viewport */
+  }
+
+  .dayTable th {
+    font-size: 14px; /* Decrease font size of table headers */
+  }
+
+  .dayTable th, .dayTable td {
+    width: 150px; /* Set a smaller width for table cells */
+    display: block; /* Display cells as block elements */
+    text-align: center; /* Center-align cell content */
+  }
+}
+
+
+
 
