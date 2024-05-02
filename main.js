@@ -47,6 +47,12 @@ function openDay(evt, dayName) {
   }
   document.getElementById(dayName).style.display = "block";
   evt.currentTarget.className += " active";
+
+  // Set width of input fields to 90px
+  var inputFields = document.querySelectorAll("#" + dayName + " input[type='text']");
+  for (i = 0; i < inputFields.length; i++) {
+    inputFields[i].style.width = "90px";
+  }
 }
 
 // Function to save table data to local storage
