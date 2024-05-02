@@ -9,15 +9,15 @@
   <body>
     <h1>Workout Routines</h1>
     <div class="tab">
-      <button class="tablinks" onclick="openDay(event, 'Monday')">Monday</button>
-      <button class="tablinks" onclick="openDay(event, 'Tuesday')">Tuesday</button>
-      <button class="tablinks" onclick="openDay(event, 'Wednesday')">Wednesday</button>
-      <button class="tablinks" onclick="openDay(event, 'Thursday')">Thursday</button>
-      <button class="tablinks" onclick="openDay(event, 'Friday')">Friday</button>
-      <button class="tablinks" onclick="openDay(event, 'Saturday')">Saturday</button>
-      <button class="tablinks" onclick="openDay(event, 'Sunday')">Sunday</button>
+      <button id="Monday" class="tablinks" onclick="openDay(event, 'dayMonday')">M</button>
+      <button id="Tuesday" class="tablinks" onclick="openDay(event, 'dayTuesday')">T</button>
+      <button id="Wednesday" class="tablinks" onclick="openDay(event, 'dayWednesday')">W</button>
+      <button id="Thursday" class="tablinks" onclick="openDay(event, 'dayThursday')">T</button>
+      <button id="Friday" class="tablinks" onclick="openDay(event, 'dayFriday')">F</button>
+      <button id="Saturday" class="tablinks" onclick="openDay(event, 'daySaturday')">S</button>
+      <button id="Sunday" class="tablinks" onclick="openDay(event, 'daySunday')">S</button>
     </div>
-    <div id="Monday" class="tabcontent">
+    <div id="dayMonday" class="tabcontent">
       <div class="dayHeader">
         <h2>Monday</h2>
         <div class="dayButtons">
@@ -36,7 +36,7 @@
         <!-- Add more rows as needed -->
       </table>
     </div>
-    <div id="Tuesday" class="tabcontent">
+    <div id="dayTuesday" class="tabcontent">
       <div class="dayHeader">
         <h2>Tuesday</h2>
         <div class="dayButtons">
@@ -55,7 +55,7 @@
         <!-- Add more rows as needed -->
       </table>
     </div>
-    <div id="Wednesday" class="tabcontent">
+    <div id="dayWednesday" class="tabcontent">
       <div class="dayHeader">
         <h2>Wednesday</h2>
         <div class="dayButtons">
@@ -74,7 +74,7 @@
         <!-- Add more rows as needed -->
       </table>
     </div>
-    <div id="Thursday" class="tabcontent">
+    <div id="dayThursday" class="tabcontent">
       <div class="dayHeader">
         <h2>Thursday</h2>
         <div class="dayButtons">
@@ -93,7 +93,7 @@
         <!-- Add more rows as needed -->
       </table>
     </div>
-    <div id="Friday" class="tabcontent">
+    <div id="dayFriday" class="tabcontent">
       <div class="dayHeader">
         <h2>Friday</h2>
         <div class="dayButtons">
@@ -112,7 +112,7 @@
         <!-- Add more rows as needed -->
       </table>
     </div>
-    <div id="Saturday" class="tabcontent">
+    <div id="daySaturday" class="tabcontent">
       <div class="dayHeader">
         <h2>Saturday</h2>
         <div class="dayButtons">
@@ -131,7 +131,7 @@
         <!-- Add more rows as needed -->
       </table>
     </div>
-    <div id="Sunday" class="tabcontent">
+    <div id="daySunday" class="tabcontent">
       <div class="dayHeader">
         <h2>Sunday</h2>
         <div class="dayButtons">

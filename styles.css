@@ -140,6 +140,21 @@ button:hover {
   background-color: #ccc;
 }
 
+.footer {
+  display: flex; /* Use flexbox */
+  justify-content: center; /* Center content horizontally */
+  align-items: center; /* Center content vertically */
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+.footer button {
+  margin: 0 10px; /* Add some spacing between buttons */
+}
+
 /* Day header styles */
 .dayHeader {
   display: flex;
@@ -180,6 +195,20 @@ button:hover {
     width: 80px; /* Set a smaller width for table cells */
     text-align: center; /* Center-align cell content */
   }
+
+  .footer {
+    display: flex; /* Use flexbox */
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+  }
+  
+  .footer button {
+    margin: 0 10px; /* Add some spacing between buttons */
+  }
+  
 }
 
 

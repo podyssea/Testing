@@ -25,13 +25,13 @@ function removeRowFromTable(tableId) {
 
 // Function to add a row to the table of the current active tab
 function addRow() {
-  var activeTabId = document.querySelector(".tablinks.active").textContent;
+  var activeTabId = document.querySelector(".tablinks.active").id;
   addRowToTable("table" + activeTabId);
 }
 
 // Function to remove the last row from the table of the current active tab
 function removeRow() {
-  var activeTabId = document.querySelector(".tablinks.active").textContent;
+  var activeTabId = document.querySelector(".tablinks.active").id;
   removeRowFromTable("table" + activeTabId);
 }
 
@@ -130,4 +130,13 @@ function loadData() {
 function clearData() {
   localStorage.removeItem('tableData');
   alert('Data cleared successfully!');
+}
+
+function toggleSidebar() {
+  var sidebar = document.querySelector('.sidebar');
+  if (sidebar.style.left === '0px') {
+    sidebar.style.left = '-250px';
+  } else {
+    sidebar.style.left = '0px';
+  }
 }
