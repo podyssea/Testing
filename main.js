@@ -8,7 +8,7 @@ function addRowToTable(tableId) {
     var cell = newRow.insertCell(i);
     var input = document.createElement("input");
     input.type = "text";
-    input.style.width = "150px"; // Set width of input box
+    input.style.width = "90px"; // Set width of input box
     cell.appendChild(input);
   }
 }

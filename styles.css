@@ -167,7 +167,7 @@ button:hover {
 }
 
 /* Media query for smaller screens */
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 768px) {
   .dayTable {
     width: 100%; /* Set table width to 100% of the viewport */
   }
@@ -177,8 +177,7 @@ button:hover {
   }
 
   .dayTable th, .dayTable td {
-    width: 150px; /* Set a smaller width for table cells */
-    display: block; /* Display cells as block elements */
+    width: 80px; /* Set a smaller width for table cells */
     text-align: center; /* Center-align cell content */
   }
 }
