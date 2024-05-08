@@ -1,38 +1,88 @@
-// Function to add a row to a specific table
-function addRowToTable(tableId) {
-  var table = document.getElementById(tableId);
-  var newRow = table.insertRow(-1); // Insert new row at the end of the table
+function addDayBody() {
+  // Get all buttons with the class "tablinks"
+  var tabButtons = document.querySelectorAll('.tablinks');
 
-  // Add cells to the new row
-  for (var i = 0; i < table.rows[0].cells.length; i++) {
-    var cell = newRow.insertCell(i);
-    var input = document.createElement("input");
-    input.type = "text";
-    input.style.width = "90px"; // Set width of input box
-    cell.appendChild(input);
+  // Loop through each button
+  for (var i = 0; i < tabButtons.length; i++) {
+      // Check if the current button has the "active" class
+      if (tabButtons[i].classList.contains('active')) {
+          // Return the id of the button if it's active
+          var dayId = tabButtons[i].id;
+      }
   }
+
+  // Get the dayMonday div
+  var initial_dayBody = document.getElementById('day' + dayId);
+
+  // Create a new div element with the class "dayBody"
+  var lineBreak = document.createElement('br');
+  var dayBodyDiv = document.createElement('div');
+  dayBodyDiv.classList.add('dayBody');
+
+  // Create an input element with the class "inputField"
+  var inputField = document.createElement('input');
+  inputField.setAttribute('type', 'text');
+  inputField.classList.add('inputField');
+  inputField.style.width = '95%'; // Set the width inline style
+
+  // Create an hr element with the class "separator"
+  var separator = document.createElement('hr');
+  separator.classList.add('separator');
+
+  // Create a textarea element with the class "textArea"
+  var textArea = document.createElement('textarea');
+  textArea.classList.add('textArea');
+  textArea.setAttribute('rows', '4');
+  textArea.setAttribute('cols', '50');
+
+  // Append the input field, separator, and textarea to the dayBody div
+  dayBodyDiv.appendChild(inputField);
+  dayBodyDiv.appendChild(separator);
+  dayBodyDiv.appendChild(textArea);
+
+  // Append the dayBody div to the dayMonday div
+  initial_dayBody.appendChild(dayBodyDiv);
+  initial_dayBody.appendChild(lineBreak);
 }
 
+function removeDayBody() {
+  // Get all buttons with the class "tablinks"
+  var tabButtons = document.querySelectorAll('.tablinks');
 
-// Function to remove the last row from a specific table
-function removeRowFromTable(tableId) {
-  var table = document.getElementById(tableId);
-  var lastRowIndex = table.rows.length - 1; // Get index of last row
-  if (lastRowIndex > 1) { // Ensure there are at least two rows (header and one data row)
-    table.deleteRow(lastRowIndex); // Delete last row
+  // Loop through each button
+  for (var i = 0; i < tabButtons.length; i++) {
+      // Check if the current button has the "active" class
+      if (tabButtons[i].classList.contains('active')) {
+          // Return the id of the button if it's active
+          var dayId = tabButtons[i].id;
+      }
   }
-}
 
-// Function to add a row to the table of the current active tab
-function addRow() {
-  var activeTabId = document.querySelector(".tablinks.active").id;
-  addRowToTable("table" + activeTabId);
-}
+  // Get the initial_dayBody div
+  var initial_dayBody = document.getElementById('day' + dayId);
 
-// Function to remove the last row from the table of the current active tab
-function removeRow() {
-  var activeTabId = document.querySelector(".tablinks.active").id;
-  removeRowFromTable("table" + activeTabId);
+  // Get all elements inside initial_dayBody
+  var children = initial_dayBody.children;
+
+  // Start removing from the last child
+  for (var i = children.length - 1; i >= 0; i--) {
+      var child = children[i];
+      // Check if the child is a <div> with class "dayBody"
+      if (child.classList.contains('dayBody')) {
+          // Remove the <div> with class "dayBody"
+          child.remove();
+          // Exit the loop after removing the first <div> with class "dayBody"
+          break;
+      } else if (child.tagName === 'BR') {
+          // Remove the <br> element if found before a .dayBody
+          child.remove();
+          // If there's another <br> before a .dayBody, remove it as well and exit the loop
+          if (i > 0 && children[i - 1].classList.contains('dayBody')) {
+              children[i - 1].remove();
+              break;
+          }
+      }
+  }
 }
 
 function openDay(evt, dayName) {
@@ -47,12 +97,6 @@ function openDay(evt, dayName) {
   }
   document.getElementById(dayName).style.display = "block";
   evt.currentTarget.className += " active";
-
-  // Set width of input fields to 90px
-  var inputFields = document.querySelectorAll("#" + dayName + " input[type='text']");
-  for (i = 0; i < inputFields.length; i++) {
-    inputFields[i].style.width = "90px";
-  }
 }
 
 // Function to save table data to local storage
@@ -106,30 +150,6 @@ function loadData() {
 
   // Parse the JSON data
   var tableData = JSON.parse(jsonData);
-
-  // Check if there is any data stored
-  if (tableData) {
-    // Loop through each day and load its data into the corresponding table
-    var days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
-    days.forEach(function(day) {
-      var tableId = 'table' + day;
-      var table = document.getElementById(tableId);
-      var rowData = tableData[day];
-
-      // Loop through the rows of the table and populate them with the saved data
-      rowData.forEach(function(cellData) {
-        var newRow = table.insertRow(-1); // Insert new row at the end of the table
-
-        // Loop through each cell data and create cells in the row
-        for (var key in cellData) {
-          if (cellData.hasOwnProperty(key)) {
-            var cell = newRow.insertCell(-1); // Insert new cell at the end of the row
-            cell.innerHTML = '<input type="text" value="' + cellData[key] + '">';
-          }
-        }
-      });
-    });
-  }
 }
 
 // Function to clear saved data from local storage
@@ -138,11 +158,3 @@ function clearData() {
   alert('Data cleared successfully!');
 }
 
-function toggleSidebar() {
-  var sidebar = document.querySelector('.sidebar');
-  if (sidebar.style.left === '0px') {
-    sidebar.style.left = '-250px';
-  } else {
-    sidebar.style.left = '0px';
-  }
-}

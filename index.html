@@ -17,144 +17,21 @@
       <button id="Saturday" class="tablinks" onclick="openDay(event, 'daySaturday')">S</button>
       <button id="Sunday" class="tablinks" onclick="openDay(event, 'daySunday')">S</button>
     </div>
-    <div id="dayMonday" class="tabcontent">
-      <div class="dayHeader">
-        <h2>Monday</h2>
-        <div class="dayButtons">
-          <button class="btn-add-row" onclick="addRow()">+</button>
-          <button class="btn-rmv-row" onclick="removeRow()">-</button>
-        </div>
-      </div>
-      <table id="tableMonday" class="dayTable">
-        <tr>
-          <th>Exercise</th>
-          <th>Reps</th>
-          <th>Weight</th>
-        </tr>
-        <tr></tr>
-        <tr></tr>
-        <!-- Add more rows as needed -->
-      </table>
+    <div class="tab">
+      <button onclick="addDayBody()">+</button>
+      <button onclick="removeDayBody()">-</button>
     </div>
-    <div id="dayTuesday" class="tabcontent">
-      <div class="dayHeader">
-        <h2>Tuesday</h2>
-        <div class="dayButtons">
-          <button class="btn-add-row" onclick="addRow()">+</button>
-          <button class="btn-rmv-row" onclick="removeRow()">-</button>
-        </div>
-      </div>
-      <table id="tableTuesday" class="dayTable">
-        <tr>
-          <th>Exercise</th>
-          <th>Reps</th>
-          <th>Weight</th>
-        </tr>
-        <tr></tr>
-        <tr></tr>
-        <!-- Add more rows as needed -->
-      </table>
-    </div>
-    <div id="dayWednesday" class="tabcontent">
-      <div class="dayHeader">
-        <h2>Wednesday</h2>
-        <div class="dayButtons">
-          <button class="btn-add-row" onclick="addRow()">+</button>
-          <button class="btn-rmv-row" onclick="removeRow()">-</button>
-        </div>
-      </div>
-      <table id="tableWednesday" class="dayTable">
-        <tr>
-          <th>Exercise</th>
-          <th>Reps</th>
-          <th>Weight</th>
-        </tr>
-        <tr></tr>
-        <tr></tr>
-        <!-- Add more rows as needed -->
-      </table>
-    </div>
-    <div id="dayThursday" class="tabcontent">
-      <div class="dayHeader">
-        <h2>Thursday</h2>
-        <div class="dayButtons">
-          <button class="btn-add-row" onclick="addRow()">+</button>
-          <button class="btn-rmv-row" onclick="removeRow()">-</button>
-        </div>
-      </div>
-      <table id="tableThursday" class="dayTable">
-        <tr>
-          <th>Exercise</th>
-          <th>Reps</th>
-          <th>Weight</th>
-        </tr>
-        <tr></tr>
-        <tr></tr>
-        <!-- Add more rows as needed -->
-      </table>
-    </div>
-    <div id="dayFriday" class="tabcontent">
-      <div class="dayHeader">
-        <h2>Friday</h2>
-        <div class="dayButtons">
-          <button class="btn-add-row" onclick="addRow()">+</button>
-          <button class="btn-rmv-row" onclick="removeRow()">-</button>
-        </div>
-      </div>
-      <table id="tableFriday" class="dayTable">
-        <tr>
-          <th>Exercise</th>
-          <th>Reps</th>
-          <th>Weight</th>
-        </tr>
-        <tr></tr>
-        <tr></tr>
-        <!-- Add more rows as needed -->
-      </table>
-    </div>
-    <div id="daySaturday" class="tabcontent">
-      <div class="dayHeader">
-        <h2>Saturday</h2>
-        <div class="dayButtons">
-          <button class="btn-add-row" onclick="addRow()">+</button>
-          <button class="btn-rmv-row" onclick="removeRow()">-</button>
-        </div>
-      </div>
-      <table id="tableSaturday" class="dayTable">
-        <tr>
-          <th>Exercise</th>
-          <th>Reps</th>
-          <th>Weight</th>
-        </tr>
-        <tr></tr>
-        <tr></tr>
-        <!-- Add more rows as needed -->
-      </table>
-    </div>
-    <div id="daySunday" class="tabcontent">
-      <div class="dayHeader">
-        <h2>Sunday</h2>
-        <div class="dayButtons">
-          <button class="btn-add-row" onclick="addRow()">+</button>
-          <button class="btn-rmv-row" onclick="removeRow()">-</button>
-        </div>
-      </div>
-      <table id="tableSunday" class="dayTable">
-        <tr>
-          <th>Exercise</th>
-          <th>Reps</th>
-          <th>Weight</th>
-        </tr>
-        <tr></tr>
-        <tr></tr>
-        <!-- Add more rows as needed -->
-      </table>
-    </div>
+
+    <div id="dayMonday" class="tabcontent"><div class="dayHeader"><h5>Monday</h5></div><br></div>
+    <div id="dayTuesday" class="tabcontent"><div class="dayHeader"><h5>Tuesday</h5></div><br></div>
+    <div id="dayWednesday" class="tabcontent"><div class="dayHeader"><h5>Wednesday</h5></div><br></div>
+    <div id="dayThursday" class="tabcontent"><div class="dayHeader"><h5>Thursday</h5></div><br></div>
+    <div id="dayFriday" class="tabcontent"><div class="dayHeader"><h5>Friday</h5></div><br></div>
+    <div id="daySaturday" class="tabcontent"><div class="dayHeader"><h5>Saturday</h5></div><br></div>
+    <div id="daySunday" class="tabcontent"><div class="dayHeader"><h5>Sunday</h5></div><br></div>
     <div class="footer">
-      <button onclick="saveData()">Save</button>
+      <button onclick="saveData()">Export</button>
       <!-- Save button -->
-      <button onclick="clearData()">Clear</button>
-      <!-- Clear data button -->
     </div>
     <script src="main.js"></script>
     <script>

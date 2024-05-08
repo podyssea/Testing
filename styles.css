@@ -1,4 +1,7 @@
 /* styles.css */
+html {
+  background-color: lightgrey; /* Light grey background for the whole HTML document */
+}
 
 /* Body styles */
 body {
@@ -17,19 +20,19 @@ h1 {
 /* Tab styles */
 .tab {
   overflow: hidden;
-  border: 1px solid #ccc;
-  background-color: #f1f1f1;
+  border: 1px solid #5887a6;
+  background-color: #f4ebeb;
 }
 
 .tab button {
-  background-color: inherit;
+  background-color: #ffffff;
   float: left;
-  border: none;
+  border:  1px solid #5887a6;
   outline: none;
   cursor: pointer;
   padding: 14px 16px;
   transition: 0.3s;
-  color: #333; /* Change text color to dark gray */
+  color: #000000; /* Change text color to dark gray */
 }
 
 .tab button:hover {
@@ -96,22 +99,12 @@ button:hover {
 }
 
 /* Save and Clear Data button styles and footer styles*/
-.footer button:nth-last-child(2),
 .footer button:last-child {
-  background-color: #009688; /* Teal color for Clear Data button */
-}
-
-.footer button:nth-last-child(2):hover,
-.footer button:last-child:hover {
-  background-color: #00796b; /* Darker teal color on hover */
-}
-
-.footer button:last-child {
-  background-color: #f44336; /* Red color for Save button */
+  background-color: #009688; /* Red color for Save button */
 }
 
 .footer button:last-child:hover {
-  background-color: #d32f2f; /* Darker red color on hover */
+  background-color: #00796b; /* Darker red color on hover */
 
 }
 
@@ -157,13 +150,58 @@ button:hover {
 
 /* Day header styles */
 .dayHeader {
-  display: flex;
-  align-items: center;
-  margin-bottom: 10px;
+  background-color: rgb(174, 198, 216);
+  border-radius: 7px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+  padding: 7px;
 }
 
-.dayHeader h2 {
-  margin: 0;
+.dayHeader h5 {
+  font-weight: normal; /* Normal font weight */
+  font-size: 18px; /* Adjust font size */
+  padding-left: 20px;
+}
+
+/* Day header styles */
+.dayBody {
+  background-color: lightgrey;
+  border-radius: 7px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+  padding: 7px;
+}
+
+.textArea {
+    width: calc(100% - 1px);
+    height: 100px;
+    padding: 14px;
+    background-color: lightgrey;
+    border: none;
+    border-radius: 5px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    box-sizing: border-box;
+    resize: vertical;
+}
+
+.inputField {
+  width: calc(100% - 1px); /* Subtract padding */
+  padding: 7px;
+  border: 1px solid black;
+  background-color: lightgrey;
+  border-radius: 5px;
+  margin-bottom: 10px; /* Spacing between input and separator */
+}
+
+.separator {
+  width: 100%;
+  height: 1px;
+  background-color: black;
+  margin: 10px 0; /* Spacing above and below the separator */
+}
+
+.dayBody h2 {
+  font-weight: normal; /* Normal font weight */
+  font-size: 18px; /* Adjust font size */
 }
 
 /* Day button styles */
