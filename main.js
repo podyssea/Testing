@@ -12,7 +12,7 @@ function addDayBody() {
   }
 
   // Get the dayMonday div
-  var initial_dayBody = document.getElementById('day' + dayId);
+  var initial_dayBody = document.getElementById('day' + dayId + "Form");
 
   // Create a new div element with the class "dayBody"
   var lineBreak = document.createElement('br');
@@ -22,6 +22,7 @@ function addDayBody() {
   // Create an input element with the class "inputField"
   var inputField = document.createElement('input');
   inputField.setAttribute('type', 'text');
+  inputField.setAttribute('name', dayId + "Exercise");
   inputField.classList.add('inputField');
   inputField.style.width = '95%'; // Set the width inline style
 
@@ -31,6 +32,7 @@ function addDayBody() {
 
   // Create a textarea element with the class "textArea"
   var textArea = document.createElement('textarea');
+  textArea.setAttribute('name', dayId + "Sets");
   textArea.classList.add('textArea');
   textArea.setAttribute('rows', '4');
   textArea.setAttribute('cols', '50');
@@ -99,62 +101,18 @@ function openDay(evt, dayName) {
   evt.currentTarget.className += " active";
 }
 
-// Function to save table data to local storage
-function saveData() {
-  // Create an object to store the table data
-  var tableData = {};
+// Function to add form inside each day div
+function addFormsToDays() {
+  var days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
 
-  // Loop through each table and save its data
-  var days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
   days.forEach(function(day) {
-    var tableId = 'table' + day;
-    var table = document.getElementById(tableId);
-    var rowData = [];
-
-    // Loop through each row of the table
-    for (var i = 1; i < table.rows.length; i++) { // Start from index 1 to skip the header row
-      var row = table.rows[i];
-      var cellData = {};
-
-      // Loop through each cell of the row
-      for (var j = 0; j < row.cells.length; j++) {
-        var cell = row.cells[j];
-        var input = cell.querySelector('input');
-
-        // Store the value of the input field in the cell data object
-        cellData['input' + (j + 1)] = input.value;
-      }
-
-      // Push the cell data to the row data array
-      rowData.push(cellData);
-    }
-
-    // Store the row data in the table data object
-    tableData[day] = rowData;
+      var dayDiv = document.getElementById("day" + day);
+      var form = document.createElement("form");
+      form.setAttribute("id", "day" + day + "Form");
+      dayDiv.appendChild(form);
   });
-
-  // Convert the table data object to JSON
-  var jsonData = JSON.stringify(tableData);
-
-  // Save the JSON data to local storage
-  localStorage.setItem('tableData', jsonData);
-
-  // Inform the user that data has been saved
-  alert('Data saved successfully!');
 }
 
-// Function to load table data from local storage
-function loadData() {
-  // Retrieve the JSON data from local storage
-  var jsonData = localStorage.getItem('tableData');
-
-  // Parse the JSON data
-  var tableData = JSON.parse(jsonData);
-}
-
-// Function to clear saved data from local storage
-function clearData() {
-  localStorage.removeItem('tableData');
-  alert('Data cleared successfully!');
-}
+// Call the function to add forms to days
+addFormsToDays();
 
