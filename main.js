@@ -162,56 +162,10 @@ function captureFormData() {
   // Convert the formData object to JSON
   var jsonData = JSON.stringify(formData);
 
+  localStorage.setItem('jsonData', jsonData);
+
   // Return the JSON data if needed
   return jsonData;
 }
 
-function loadFormData(jsonData) {
-  // Parse the JSON data
-  var formData = JSON.parse(jsonData);
-
-  // Loop through each form in the formData object
-  for (var formId in formData) {
-      if (formData.hasOwnProperty(formId)) {
-          // Get the form element
-          var form = document.getElementById(formId);
-          console.log(form)
-          // Get the form data for the current form
-          var formValues = formData[formId];
-
-          // Loop through each input field and textarea in the form data
-          for (var fieldName in formValues) {
-              if (formValues.hasOwnProperty(fieldName)) {
-                  // Get the input field or textarea by name
-                  var field = form.querySelector('[name="' + fieldName + '"]');
-
-                  // If the field exists, set its value
-                  if (field) {
-                      field.value = formValues[fieldName];
-                  }
-              }
-          }
-      }
-  }
-}
-
-// Function to capture form data and save it
-function saveFormData() {
-  // Capture form data
-  var savedData = captureFormData();
-
-  // Store the captured data in local storage
-  localStorage.setItem('savedData', savedData);
-}
-
-// Function to load saved data back into the form
-function loadSavedData() {
-  // Retrieve saved data from local storage
-  var savedData = localStorage.getItem('savedData');
-
-  // If saved data exists, load it into the form
-  if (savedData) {
-      loadFormData(savedData);
-  }
-}
 
