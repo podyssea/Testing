@@ -2,11 +2,6 @@ $(document).ready(function(){
     savedData = localStorage.getItem('jsonData')
     var retrievedData = JSON.parse(savedData);
 
-    console.log(retrievedData)
-
-    // // Get all buttons with the class "tablinks"
-    // var tabButtons = document.querySelectorAll('.tablinks');
-    
     // Loop through each day
     for (var day in retrievedData) {
         if (retrievedData.hasOwnProperty(day)) {
@@ -17,17 +12,14 @@ $(document).ready(function(){
 
             // Loop through each form field in the current day's form
             for (var field in formData) {
-                console.log(formData[field])
-
                 if (!(formData === undefined)) {
                     // Create a new div element with the class "dayBody"
-                    // Create an hr element with the class "separator"
-                    var separator = document.createElement('hr');
                     var lineBreak = document.createElement('br');
                     var dayBodyDiv = document.createElement('div');
-
-                    separator.classList.add('separator');
                     dayBodyDiv.classList.add('dayBody');
+
+                    var separator = document.createElement('hr');
+                    separator.classList.add('separator');
 
                     // Convert both the field name and the substring to lowercase for case-insensitive search
                     var fieldName = field.toLowerCase();
@@ -47,10 +39,9 @@ $(document).ready(function(){
                         inputField.style.width = '95%'; // Set the width inline style
                         inputField.value = formData[field]
 
-                        // Append the labels and input fields to the dayBody div
                         dayBodyDiv.appendChild(exerciseLabel);
                         dayBodyDiv.appendChild(inputField);
-                        dayBodyDiv.appendChild(separator);
+                        initial_dayBody.appendChild(dayBodyDiv);
                     } else {
                         // If 'Exercise' is not found, check for 'Set'
                         substring = 'Set'.toLowerCase();
@@ -66,16 +57,13 @@ $(document).ready(function(){
                             inputField_2.classList.add('inputField');
                             inputField_2.style.width = '95%'; // Set the width inline style
                             inputField_2.value = formData[field]
-                            
-                            // Append the labels and input fields to the dayBody div
+
                             dayBodyDiv.appendChild(setsLabel);
                             dayBodyDiv.appendChild(inputField_2);
+                            initial_dayBody.appendChild(dayBodyDiv);
+                            initial_dayBody.appendChild(lineBreak);
                         }
                     }
-
-                    // Append the dayBody div to the dayMonday div
-                    initial_dayBody.appendChild(dayBodyDiv);
-                    initial_dayBody.appendChild(lineBreak);
                 }
             }
         }
